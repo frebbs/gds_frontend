@@ -1,0 +1,10 @@
+@import "../../node_modules/govuk-frontend/dist/govuk/all";
+
+.setBackgroundDark {
+  background-color: white;
+}
+
+.centerOnPage {
+  display: grid;
+  place-items: center;
+}
