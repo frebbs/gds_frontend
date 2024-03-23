@@ -1,5 +1,7 @@
 import 'dotenv/config';
 
+import fs from 'node:fs';
+
 import express from 'express';
 import nunjucks from 'nunjucks';
 
@@ -11,6 +13,7 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const configData = JSON.parse(fs.readFileSync('./config/siteConfig.json', 'utf-8'));
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -24,12 +27,15 @@ app.use([
 
 app.use('/assets', express.static(path.join(__dirname, '/node_modules/govuk-frontend/dist/govuk/assets')))
 
-nunjucks.configure([
-    "node_modules/govuk-frontend/dist",
+const env = nunjucks.configure([
+    "node_modules/bootstrap/dist",
     'views'], {
     express: app,
-    autoescape: true
+    autoescape: false,
+    watch: true
 });
+
+env.addGlobal('configData', configData);
 
 app.set('view engine', 'njk');
 
@@ -37,9 +43,7 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.get('/signup', (req, res) => {
-    res.render('signup')
-})
+
 
 
 // 404 Error Handler

@@ -16,8 +16,9 @@ module.exports = {
                     options: {
                         presets: ['@babel/preset-env']
                     }
-                }
+                },
             }
         ]
-    }
+    },
+    devtool: 'source-map'
 };

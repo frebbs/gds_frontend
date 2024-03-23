@@ -1,10 +1,15 @@
-@import "../../node_modules/govuk-frontend/dist/govuk/all";
-
-.setBackgroundDark {
-  background-color: white;
-}
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 .centerOnPage {
   display: grid;
   place-items: center;
+}
+
+body.dark-mode {
+  background-color: #121212; /* Dark background color */
+  color: #e0e0e0; /* Light text color for contrast */
+}
+
+body.dark-mode a {
+  color: #9a9a9a; /* Example: Adjusting link colors for dark mode */
 }
