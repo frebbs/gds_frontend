@@ -1,11 +1,27 @@
 {% extends "template.njk" %}
 
+{% block header %}
+    <div class="container">
+        {% from "./components/header/macro.njk" import mainNavbar %}
+
+        {{ mainNavbar(configData) }}{% endblock %}
+    </div>
+
+
 {% block content %}
-    {% from "./components/header/macro.njk" import mainNavbar %}
 
-    {{ mainNavbar(configData) }}
 
-    <h1>Hello world!</h1>
+    <div class="root-hero centerOnPage">
+        <h1 class="test">Hello world!</h1>
+        <p>This is a test to see if it works!</p>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {% from "./components/footer/macro.njk" import footerNav %}
+
+    {{ footerNav(configData) }}
 {% endblock %}
 
 {% block bodyEnd %}

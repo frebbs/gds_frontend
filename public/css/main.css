@@ -11844,6 +11844,27 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+}
+
+.footer {
+  background: transparent;
+  color: #e0e0e0;
+  padding: 5px 0;
+}
+
 .centerOnPage {
   display: grid;
   place-items: center;
@@ -11856,6 +11877,10 @@ body.dark-mode {
 
 body.dark-mode a {
   color: #9a9a9a; /* Example: Adjusting link colors for dark mode */
+}
+
+.text-white {
+  color: #e0e0e0;
 }
 
 /*# sourceMappingURL=main.css.map */
