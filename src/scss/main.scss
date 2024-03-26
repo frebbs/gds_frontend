@@ -23,11 +23,11 @@ body {
 }
 
 .container {
-  flex: 1; // This will allow the container to expand and push the footer down
+  flex: 1;
 }
 
 .footer {
-  background: transparent; // Use the variable for consistency
+  background: $color-dark-mode-background; // Use the variable for consistency
   color: $color-dark-mode-text;
   padding: 5px 0; // Reduced padding for the footer itself
 }

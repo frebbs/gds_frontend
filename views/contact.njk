@@ -1,18 +1,22 @@
 {% extends "template.njk" %}
 
+{% block header %}
+    <div class="container">
+        {% from "./components/header/macro.njk" import mainNavbar %}
+
+        {{ mainNavbar(configData) }}
+    </div>
+{% endblock %}
 
 {% block content %}
-    {% from "./components/header/macro.njk" import mainNavbar %}
 
-    {{ mainNavbar(configData) }}
 
     <h1 class="test">This is the contact page!!</h1>
 {% endblock %}
 
 {% block footer %}
-    {% from "./components/footer/macro.njk" import footerNav %}
-
-    {{ footerNav(configData) }}
+        {% from "./components/footer/macro.njk" import footerNav %}
+        {{ footerNav(configData) }}
 {% endblock %}
 
 {% block bodyEnd %}
